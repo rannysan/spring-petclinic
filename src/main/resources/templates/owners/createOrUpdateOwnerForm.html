@@ -16,6 +16,8 @@
         th:replace="~{fragments/inputField :: input ('City', 'city', 'text')}" />
       <input
         th:replace="~{fragments/inputField :: input ('Telephone', 'telephone', 'text')}" />
+      <select
+        th:replace="~{fragments/selectField :: select ('Active', 'active', ${Active})}" />
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
