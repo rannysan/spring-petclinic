@@ -1,4 +1,4 @@
-/*
+./*
  * Copyright 2012-2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,6 +58,10 @@ public class Owner extends Person {
 	@NotEmpty
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
+
+  @Column(name = "active")
+	@NotEmpty
+	private boolean active;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
@@ -136,6 +140,14 @@ public class Owner extends Person {
 			}
 		}
 		return null;
+	}
+
+  public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	@Override
